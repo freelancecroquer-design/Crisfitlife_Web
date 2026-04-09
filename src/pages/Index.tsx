@@ -10,23 +10,24 @@ import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import WhatsAppFloat from "@/components/sections/WhatsAppFloat";
+import { siteConfig } from "@/config/site";
 
 const SEO = {
     title: "CRIS FIT LIFE | Rediseñando tu Nutrición con Ciencia y Empatía",
-    description: "Asesoría nutricional de alto nivel por Cristian Cardona. Nutricionista del Caracas FC. Planes personalizados, acompañamiento semanal y resultados reales basados en ciencia.",
-    canonical: "https://crisfitlife.com/",
-    image: "/images/workspace.jpg",
+    description: siteConfig.description,
+    canonical: siteConfig.url,
+    image: siteConfig.ogImage,
     keywords: "nutricionista Caracas, Cristian Cardona, nutrición deportiva, Caracas FC, bajar de peso Caracas, asesoría nutricional online",
 };
 
 const SCHEMA = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Cris Fit Life",
+    "name": siteConfig.name,
     "description": SEO.description,
     "url": SEO.canonical,
-    "telephone": "+584125386952",
-    "email": "crisfitlifeinfo@gmail.com",
+    "telephone": siteConfig.contact.phone,
+    "email": siteConfig.contact.email,
     "address": {
         "@type": "PostalAddress",
         "addressLocality": "Caracas",
@@ -52,14 +53,14 @@ const Index = () => {
                 
                 {/* Mobile & Performance */}
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content="#151b2e" />
+                <meta name="theme-color" content="#260000" />
 
                 <script type="application/ld+json">
                     {JSON.stringify(SCHEMA)}
                 </script>
             </Helmet>
 
-            <div className="relative min-h-screen bg-slate-50 selection:bg-teal-200 selection:text-teal-900">
+            <div className="relative min-h-screen bg-black selection:bg-[#260000] selection:text-white">
                 <Header />
 
                 <main id="main-content">
