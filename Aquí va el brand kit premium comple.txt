@@ -1,0 +1,83 @@
+Aquí va el brand kit premium completo para Cris Fit Life, pensado para nutrición, hábitos de vida, cercanía y conversión. La dirección se apoya en buenas prácticas de branding fitness, coherencia visual y estructura web enfocada en CTA claros, prueba social y simplicidad.
+1) Esencia de marca
+Cris Fit Life debe sentirse como una marca de bienestar serio, cercano y posible de sostener. La promesa central no es “cambiarte en 30 días”, sino acompañarte a construir hábitos, orden y resultados reales. La personalidad ideal mezcla motivación, calidez y autoridad tranquila. La marca debe hablarle a personas que quieren mejorar su salud sin extremos ni complicaciones.
+2) Posicionamiento
+Qué vende la marca: nutrición personalizada, hábitos de vida y acompañamiento humano. Qué la diferencia: enfoque realista, seguimiento cercano y tono empático, en vez de discurso rígido o fitness agresivo. Qué debe comunicar siempre: claridad, confianza, energía limpia y progreso sostenible. Esto es clave porque una identidad fitness fuerte necesita un nicho claro, una propuesta única y mensajes fáciles de entender.
+3) Logo rediseñado
+Para el logo, la mejor ruta es un sistema simple y flexible, no un símbolo recargado. Recomiendo una familia con estas piezas:
+● Logo principal horizontal: “Cris” más fuerte y “Fit Life” como descriptor.
+● Versión secundaria compacta: monograma o isotipo para redes y favicon.
+● Versión monocromática: para fondos claros y oscuros.
+La forma visual ideal sería un wordmark limpio con un símbolo sutil de salud, equilibrio o movimiento, porque un logo fitness debe ser simple, adaptable y reconocible en tamaños pequeños.
+4) Paleta de color
+Te propongo una paleta premium, fresca y humana:
+
+Uso
+Color
+Hex
+Principal
+Verde bienestar
+#42B89E
+Secundario oscuro
+Verde profundo / teal oscuro
+#153B3A
+Fondo claro
+Blanco cálido
+#F7F7F2
+Neutro texto
+Gris carbón
+#1F2933
+Acento CTA
+Coral suave
+#F27A5E
+Esta combinación funciona porque el verde comunica salud y bienestar, el oscuro da confianza, y el acento cálido empuja a la acción sin romper la armonía. En branding fitness conviene evitar paletas demasiado genéricas o estridentes para no parecer una plantilla cualquiera.
+5) Tipografías
+La tipografía debe sentirse moderna, clara y elegante. Mi recomendación es una sola familia sans para casi todo, con pesos distintos:
+● Títulos: una sans fuerte y limpia, tipo Poppins, Inter o Montserrat.
+● Texto: la misma familia en regular o medium.
+● Énfasis: solo un peso más alto, nunca demasiadas fuentes mezcladas.
+Un sitio fitness efectivo necesita lectura rápida, jerarquía visual clara y consistencia en móvil.
+6) Estilo visual
+La fotografía debe mostrar vida real, no poses vacías. Usa imágenes de:
+● asesoría uno a uno,
+● comida ordenada y natural,
+● manos, cuadernos, medición, preparación, hábitos,
+
+● retratos cercanos con luz cálida y natural.
+Visualmente, la marca debería verse con mucho aire, tarjetas limpias, bordes suaves y composiciones simples. En fitness y wellness, los mejores sitios priorizan imágenes profesionales, layout limpio, y CTAs visibles por encima de saturar con texto.
+7) Tono de voz
+El tono ideal es cercano y motivador, pero con estructura y seguridad. Debe sonar como una guía que acompaña, no como una marca que impone. Ejemplos de estilo:
+● “Vamos paso a paso, sin extremos.”
+● “Tu plan debe adaptarse a tu vida, no al revés.”
+● “Más constancia, menos culpa.”
+Esto refuerza una identidad humana, accesible y con foco en resultados sostenibles.
+8) Sistema web
+La web debe seguir una estructura de conversión simple, con varios puntos de acción. Orden recomendado:
+1. Hero fuerte con promesa clara.
+2. Sobre Cris.
+3. Servicios.
+4. Resultados/testimonios.
+5. Método de trabajo.
+6. FAQ.
+7. CTA final.
+Además, conviene tener CTAs repetidos, navegación simple y prueba social visible, porque eso mejora la conversión en sitios de fitness y bienestar.
+9) Copy maestro
+Te dejo un tono base para todo el sistema:
+Headline principal: Nutrición y hábitos que encajan con tu vida real.
+Subheadline: Acompañamiento cercano para comer mejor, sentirte con más energía y sostener resultados.
+
+CTA principal: Agendar evaluación.
+CTA secundario: Ver cómo trabajo.
+Mensaje de marca: Te ayudo a construir hábitos simples, claros y sostenibles para que tu bienestar no dependa de motivación momentánea.
+10) Manual de uso rápido
+● Usa el verde como color protagonista, no como decoración secundaria.
+● Mantén una sola línea estética en web, redes y portadas.
+● No uses demasiados efectos ni muchas fuentes distintas.
+● Da prioridad a claridad, fotos reales y CTA visibles.
+● Haz que todo se sienta premium, pero simple de entender.
+Puedo convertir esto en el siguiente paso como un manual de marca en formato formal, con:
+● versiones exactas del logo,
+● guía de uso,
+● estructura final de home,
+● copy completo de cada sección,
+● y un esquema listo para Canva o para desarrollo web.

@@ -1,0 +1,93 @@
+/* ============================================================
+   CRIS FIT LIFE — Ultra Premium Nike-Level Design System v2
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Color Palette */
+  --brand-red: 0 100% 15%;        /* #260000 */
+  --background: 0 0% 100%;        /* Pure White */
+  --foreground: 0 0% 0%;          /* Pure Black */
+  
+  --primary: 345 100% 7%;         /* Absolute Deep Red */
+  --border: 0 0% 92%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body antialiased selection:bg-[#260000] selection:text-white;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* TIGHTER ATHLETIC SPACING */
+  .section-padding {
+    @apply py-10 md:py-16 px-6;
+  }
+  
+  .container-cfl {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* BUTTON REDESIGN: ULTRA HIGH-LEVEL NIKE STYLE */
+  .btn-premium {
+    @apply relative px-10 py-5 bg-black text-white font-black tracking-[0.2em] uppercase text-[10px] 
+           overflow-hidden transition-all duration-300 transform-gpu
+           hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)];
+  }
+
+  .btn-premium::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+           -translate-x-full transition-transform duration-1000 ease-out;
+  }
+
+  .btn-premium:hover::after {
+    @apply translate-x-full;
+  }
+
+  /* BUTTON RED - Brand Red Variation */
+  .btn-red {
+    @apply bg-[#260000] hover:bg-black;
+  }
+
+  /* PHOTO EFFECTS: HIGH-LEVEL NIKE MASKING */
+  .photo-mask-red {
+    @apply relative overflow-hidden;
+  }
+  
+  .photo-mask-red::after {
+    content: '';
+    @apply absolute inset-0 bg-[#260000]/60 mix-blend-multiply transition-opacity duration-700 opacity-80;
+  }
+
+  .photo-mask-red:hover::after {
+    @apply opacity-0;
+  }
+
+  .photo-reveal-container {
+    @apply relative overflow-hidden;
+  }
+
+  .photo-border-effect {
+    @apply border-[1px] border-black/10 transition-all duration-500 hover:border-[#260000]/40;
+  }
+}
+
+/* Typography Enhancements */
+.nike-title {
+  @apply font-black text-6xl md:text-9xl uppercase tracking-tighter leading-[0.8] italic;
+}
+
+.shadow-logo {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+}
