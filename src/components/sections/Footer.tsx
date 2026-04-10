@@ -1,4 +1,5 @@
 import React from 'react';
+import { siteConfig } from '../../config/site';
 
 const Footer = () => {
   return (
@@ -17,8 +18,8 @@ const Footer = () => {
             © {new Date().getFullYear()} — LIC. CRISTIAN CARDONA
           </p>
           <div className="flex gap-6">
-            <a href="https://instagram.com/crisfitlife" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">Instagram</a>
-            <a href="https://wa.me/584125386952" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">WhatsApp</a>
+            <a href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">Instagram</a>
+            <a href={siteConfig.links.whatsapp} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">WhatsApp</a>
           </div>
         </div>
       </div>

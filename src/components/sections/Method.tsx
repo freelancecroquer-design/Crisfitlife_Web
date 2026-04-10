@@ -1,106 +1,105 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, ClipboardList, AppWindow, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Target, Brain, Activity } from 'lucide-react';
 
 const STEPS = [
   {
-    num: "01",
-    title: "Análisis 360",
-    text: "Evaluamos fisiología, hábitos y psicología antes de trazar un solo gramo."
+    icon: Target,
+    title: "Diagnóstico",
+    desc: "Análisis profundo de tu punto de partida. No solo peso, sino contexto real.",
+    accent: "01"
   },
   {
-    num: "02",
-    title: "Ingeniería Dietética",
-    text: "Planes precisos que se adaptan a tu presupuesto y vida social real."
+    icon: Brain,
+    title: "Estrategia",
+    desc: "Diseño de un plan que se adapta a tu vida, no al revés. Ciencia aplicada.",
+    accent: "02"
   },
   {
-    num: "03",
-    title: "Optimización Continua",
-    text: "Ajsutes semanales basados en data para garantizar el progreso."
+    icon: Activity,
+    title: "Ejecución",
+    desc: "Acompañamiento constante. El motor de tu cambio es la consistencia.",
+    accent: "03"
   }
 ];
 
 const Method = () => {
   return (
-    <section id="metodologia" className="section-padding bg-zinc-50 overflow-hidden">
-      <div className="container-cfl">
-        
-        <div className="flex flex-col md:flex-row gap-16 items-center mb-24">
-          <div className="flex-1">
-            <motion.h2 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              className="nike-title text-black mb-8"
-            >
-              Cómo <br /> <span className="text-zinc-300">Ganamos.</span>
-            </motion.h2>
-            <p className="text-xl font-bold tracking-tight text-zinc-500 max-w-sm">
-              Un sistema refinado durante años con atletas elite, ahora disponible para ti.
-            </p>
-          </div>
-          
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="flex-1 relative group"
+    <section id="metodologia" className="section-padding bg-black text-white relative">
+      <div className="container-cfl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32">
+          <motion.div
+            initial={{ opacity: 0, x: -50, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
           >
-            {/* New Methodology Action Photo as requested */}
-            <div className="aspect-video overflow-hidden rounded-[2rem] shadow-2xl photo-mask-red">
+            <h2 className="nike-title mb-10">Meta <br /> <span className="text-white/20">Programada.</span></h2>
+            <div className="space-y-8">
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 bg-[#260000] flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="text-white" />
+                </div>
+                <div>
+                  <h4 className="font-black italic uppercase tracking-tighter text-xl mb-2">Ciencia Sin Excusas</h4>
+                  <p className="text-white/40 text-sm leading-relaxed">Metodología basada en evidencia clínica y deportiva. Sin hacks, solo resultados.</p>
+                </div>
+              </div>
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0">
+                  <Activity className="text-black" />
+                </div>
+                <div>
+                  <h4 className="font-black italic uppercase tracking-tighter text-xl mb-2">Rendimiento Total</h4>
+                  <p className="text-white/40 text-sm leading-relaxed">Optimizamos cada variable: nutrición, descanso y suplementación estratégica.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, filter: 'grayscale(1)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'grayscale(0)' }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="aspect-[4/5] overflow-hidden rounded-[4rem] border-8 border-white/5">
               <img 
                 src="/images/method-action.jpg" 
-                alt="Cristian Cardona en acción" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                alt="Cristian in action" 
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-2xl hidden md:block">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#260000]">Resultados Garantizados</span>
+            {/* Athletic Floating Badge */}
+            <div className="absolute -bottom-10 -right-10 bg-[#260000] p-10 rounded-full w-40 h-40 flex flex-col items-center justify-center border-4 border-black text-center group hover:scale-110 transition-transform">
+              <span className="font-black italic text-4xl mb-1">100%</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Enfoque</span>
             </div>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {STEPS.map((step, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9, filter: 'blur(5px)' }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              viewport={{ once: false, margin: "-100px" }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-10 bg-white border border-zinc-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative"
+              className="relative group pt-16"
             >
-              <span className="absolute top-6 right-8 font-black text-6xl text-zinc-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                {step.num}
+              <span className="absolute top-0 left-0 text-[10rem] font-black italic text-white/[0.03] leading-none pointer-events-none group-hover:text-[#260000]/10 transition-colors">
+                {step.accent}
               </span>
-              <div className="flex flex-col h-full relative z-10">
-                <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-lg mb-8 group-hover:bg-[#260000] transition-colors">
-                   <Target className="w-5 h-5" />
-                </div>
-                <h3 className="font-body font-black text-2xl uppercase tracking-tighter mb-4">{step.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-8">
-                  {step.text}
-                </p>
-                <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#260000] opacity-0 group-hover:opacity-100 transition-all">
-                  Saber más <ArrowRight className="w-4 h-4" />
-                </div>
+              <div className="relative z-10">
+                <div className="w-20 h-2px bg-[#260000] mb-8 group-hover:w-32 transition-all duration-500" />
+                <h3 className="text-3xl font-black italic uppercase tracking-tighter mb-4 group-hover:pl-4 transition-all">{step.title}</h3>
+                <p className="text-white/40 leading-relaxed text-sm max-w-xs">{step.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Dynamic Quote Banner */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-24 p-12 bg-black rounded-[3rem] text-center relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#260000]/20 to-transparent pointer-events-none" />
-          <h4 className="font-display italic text-3xl md:text-5xl text-white mb-8 relative z-10">
-            "La nutrición no es solo comida, es el combustible de tus ambiciones."
-          </h4>
-          <a href="#contacto" className="btn-premium relative z-10">
-            Únete al equipo
-          </a>
-        </motion.div>
-
       </div>
     </section>
   );

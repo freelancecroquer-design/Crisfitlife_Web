@@ -27,23 +27,23 @@ const Testimonials = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <motion.h2 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              /* SURGICAL FIX: Normal tracking to avoid overlapping letters in "Reales." */
+              initial={{ opacity: 0, x: -30, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              viewport={{ once: false, margin: "-100px" }}
               className="font-black text-6xl md:text-9xl uppercase leading-[0.9] italic tracking-normal"
             >
-              Testimonios <br /> <span className="text-white/30 tracking-tight">Reales.</span>
+              Testimonios <br /> <span className="text-white/30 tracking-normal">Reales.</span>
             </motion.h2>
           </div>
           
-          {/* SURGICAL FIX: Fully illuminated yellow stars */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
             className="flex gap-1 mb-4"
           >
             {[1, 2, 3, 4, 5].map((s) => (
-              <Star key={s} className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
+              <Star key={s} className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_20px_rgba(250,204,21,0.9)]" />
             ))}
           </motion.div>
         </div>
@@ -52,10 +52,11 @@ const Testimonials = () => {
           {TESTIMONIALS.map((t, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(5px)' }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              viewport={{ once: false, margin: "-50px" }}
               transition={{ delay: idx * 0.1 }}
-              className="relative group p-10 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-[2rem]"
+              className="relative group p-10 bg-white/5 border border-white/10 hover:border-[#260000]/50 transition-all rounded-[2rem]"
             >
               <div className="relative z-10">
                 <p className="font-display text-xl md:text-2xl leading-relaxed mb-8 text-white/80 italic">
@@ -70,10 +71,10 @@ const Testimonials = () => {
           ))}
         </div>
         
-        {/* High-Level CTA Banner */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9, filter: 'blur(20px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          viewport={{ once: false, margin: "-100px" }}
           className="mt-20 rounded-[3rem] overflow-hidden bg-[#260000] relative p-12 md:p-20 group"
         >
           <div className="absolute inset-0 z-0">

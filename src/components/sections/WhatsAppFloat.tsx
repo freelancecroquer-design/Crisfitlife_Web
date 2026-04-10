@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { siteConfig } from '../../config/site';
 
 const WhatsAppFloat = () => {
   return (
     <div className="fixed bottom-8 right-8 z-[150]">
       {/* Main Botón WhatsApp - Tooltip REMOVEL as requested */}
       <motion.a
-        href="https://wa.me/584125386952?text=Hola%20Cristian%21%20Quisiera%20iniciar%20mi%20proceso%20fitness."
+        href={siteConfig.contact.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}

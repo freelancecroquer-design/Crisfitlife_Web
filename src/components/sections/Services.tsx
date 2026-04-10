@@ -1,147 +1,105 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Shield, Zap, TrendingUp, Users, Calendar, Video } from 'lucide-react';
+import { useInView } from "../hooks/useInView";
+import { siteConfig } from "../../config/site";
+import { motion } from 'framer-motion';
 
-const WA_LINK_BASE = "https://wa.me/584125386952?text=Hola%20Cristian%2C%20me%20interesa%20el%20plan%20";
-
-type PlanKey = "presencial" | "online" | "especiales";
-
-const PLANS = {
-  presencial: [
-    {
-      id: "p-primera",
-      title: "Primera Asesoría",
-      price: "100",
-      features: ["Consulta inicial completa", "Mediciones corporales", "Plan personalizado", "Apoyo por WhatsApp"],
-      wa: "Presencial%20Primera%20Vez"
-    },
-    {
-      id: "p-pack3",
-      title: "Pack 3 Meses",
-      price: "230",
-      featured: true,
-      features: ["3 meses de seguimiento", "Controles mensuales", "Mediciones incluidas", "Plan Dinámico", "Ahorro significativo"],
-      wa: "Pack%20Presencial%203%20Meses"
-    }
-  ],
-  online: [
-    {
-      id: "o-primera",
-      title: "Primera Online",
-      price: "50",
-      features: ["Videollamada 40 min", "Análisis clínico", "Plan personalizado", "Apoyo por WhatsApp"],
-      wa: "Online%20Primera%20Vez"
-    },
-    {
-      id: "o-pack3",
-      title: "Pack 3 Meses Online",
-      price: "130",
-      featured: true,
-      features: ["12 semanas seguimiento", "3 Videollamadas", "Ajustes semanales", "Educación continua"],
-      wa: "Pack%20Online%203%20Meses"
-    }
-  ],
-  especiales: [
-    {
-      id: "e-pareja",
-      title: "Asesoría Pareja",
-      price: "180",
-      features: ["Dos planes individuales", "Estrategias conjuntas", "Mismos beneficios", "Precio preferencial"],
-      wa: "Asesoría%20Pareja"
-    },
-    {
-      id: "e-mediciones",
-      title: "Solo Mediciones",
-      price: "40",
-      features: ["Plicometría / Composición", "Informe detallado", "Sin plan alimenticio", "Ideal para control pro"],
-      wa: "Solo%20Mediciones"
-    }
-  ]
-};
-
-const TAB_DATA: { key: PlanKey; label: string }[] = [
-  { key: "presencial", label: "Presencial" },
-  { key: "online", label: "Online" },
-  { key: "especiales", label: "Especiales" }
+const SERVICES = [
+  {
+    title: "Asesoría Online",
+    price: "Flexible",
+    desc: "Acompañamiento global. Nutrición basada en ciencia sin importar dónde estés.",
+    icon: Video,
+    features: ["Plan nutricional personalizado", "Seguimiento vía WhatsApp", "Ajustes semanales"]
+  },
+  {
+    title: "Pack 3 Meses",
+    price: "Premium",
+    desc: "Transformación profunda. El método completo para resultados sostenibles.",
+    icon: Zap,
+    features: ["Análisis metabólico", "Guía de suplementación", "Recetario exclusivo"]
+  },
+  {
+    title: "Presencial",
+    price: "Elite",
+    desc: "La experiencia completa en Caracas. Evaluación antropométrica in-situ.",
+    icon: Users,
+    features: ["Medición de pliegues", "Bioimpedancia", "Consulta 1-a-1"]
+  }
 ];
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState<PlanKey>("presencial");
-
   return (
-    <section id="servicios" className="section-padding bg-zinc-50">
-      <div className="container-cfl">
-        <div className="text-center mb-12">
+    <section id="servicios" className="section-padding bg-zinc-900 overflow-hidden">
+      <div className="container-cfl mx-auto">
+        <div className="max-w-3xl mb-16 md:mb-24">
           <motion.h2 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="text-black font-body font-black text-6xl md:text-8xl uppercase tracking-tighter italic"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            className="nike-title mb-8 tracking-tight"
           >
-            Invierte en ti
+            Invierte <br /> <span className="text-[#260000]">EN TI.</span>
           </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            className="text-white/40 font-bold uppercase tracking-widest text-sm"
+          >
+            Soluciones de alto rendimiento para objetivos reales.
+          </motion.p>
         </div>
 
-        {/* New Nike-Style Pill Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="flex bg-zinc-200 p-1 rounded-full">
-            {TAB_DATA.map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`px-8 py-3 rounded-full text-[10px] font-black tracking-widest uppercase transition-all ${
-                  activeTab === tab.key 
-                  ? "bg-black text-white" 
-                  : "text-zinc-500 hover:text-black"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            {PLANS[activeTab].map((plan) => (
-              <motion.div
-                key={plan.id}
-                layout
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className={`flex flex-col p-10 bg-white border border-zinc-200 transition-all ${
-                  plan.featured ? "ring-2 ring-black" : ""
-                }`}
-              >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {SERVICES.map((s, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              viewport={{ once: false, margin: "-50px" }}
+              whileHover={{ y: -10 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ 
+                type: "spring", 
+                damping: 20, 
+                stiffness: 100,
+                scale: { duration: 0.4 } 
+              }}
+              className="relative group bg-zinc-950 p-8 md:p-12 border border-white/5 hover:border-[#260000]/50 transition-all rounded-[2.5rem] overflow-hidden"
+            >
+              {/* Animated Background Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#260000]/10 blur-[60px] group-hover:bg-[#260000]/30 transition-all duration-700" />
+              
+              <div className="relative z-10 h-full flex flex-col">
                 <div className="mb-8">
-                  <h3 className="font-body font-black text-3xl uppercase tracking-tighter">{plan.title}</h3>
-                  <div className="flex items-baseline gap-1 mt-2">
-                    <span className="text-5xl font-black italic tracking-tighter">${plan.price}</span>
-                    <span className="text-xs font-black uppercase opacity-40">/ USD</span>
+                  <div className="w-16 h-16 bg-[#260000]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <s.icon className="w-8 h-8 text-white" />
                   </div>
+                  <span className="text-[#260000] font-black tracking-[0.3em] uppercase text-[10px] mb-2 block">{s.price}</span>
+                  <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-4">{s.title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed mb-8">{s.desc}</p>
                 </div>
 
-                <ul className="space-y-3 mb-10 flex-grow">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="flex gap-4 items-center text-xs font-bold uppercase tracking-tight text-zinc-500">
-                      <div className="h-1 w-1 bg-black rounded-full" />
+                <ul className="space-y-4 mb-10 flex-grow">
+                  {s.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider text-white/60">
+                      <div className="w-1.5 h-1.5 bg-[#260000] rotate-45" />
                       {f}
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href={`${WA_LINK_BASE}${plan.wa}`}
+                <a 
+                  href={siteConfig.contact.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-premium flex items-center justify-center gap-3 w-full"
+                  className="w-full py-4 bg-white text-black font-black italic tracking-widest uppercase text-xs text-center hover:bg-[#260000] hover:text-white transition-all duration-500 group-hover:shadow-[0_10px_20px_rgba(38,0,0,0.3)]"
                 >
-                  Me interesa <ArrowRight className="w-4 h-4" />
+                  Me interesa
                 </a>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

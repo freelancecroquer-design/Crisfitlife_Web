@@ -79,9 +79,11 @@ const Header = () => {
                     <img 
                       src={scrolled ? "/images/icon_black.png" : "/images/icon_white.png"} 
                       alt="Jabulani Icon" 
-                      className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-700 group-hover:rotate-[360deg] group-active:rotate-[360deg]"
-                      /* Safety mix-blend modes in case PNGs have white/black backgrounds */
-                      style={{ mixBlendMode: scrolled ? 'multiply' : 'screen' }} 
+                      className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-700 group-hover:rotate-[360deg] group-active:rotate-[360deg] rounded-full"
+                      style={{ 
+                        boxShadow: scrolled ? '0 0 20px rgba(0,0,0,0.1)' : '0 0 20px rgba(255,255,255,0.2)',
+                        mixBlendMode: scrolled ? 'multiply' : 'screen'
+                      }} 
                     />
                   </motion.div>
                 )}

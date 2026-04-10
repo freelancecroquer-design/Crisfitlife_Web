@@ -8,7 +8,8 @@ export const siteConfig = {
     instagram: "https://instagram.com/crisfitlife",
   },
   contact: {
-    email: "contacto@crisfitlife.com",
+    email: "crisfitlifeinfo@gmail.com",
     phone: "+58 412 538 6952",
+    whatsappLink: "https://wa.me/584125386952?text=Hola%20Cristian%2C%20quiero%20comenzar%20mi%20asesor%C3%ADa%20nutricional.",
   }
 };
