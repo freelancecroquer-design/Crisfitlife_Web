@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const SERVICES = [
   {
-    title: "Asesoría Online",
+    title: "Asesoría Online (1 mes)",
     price: "Flexible",
     desc: "Acompañamiento global. Nutrición basada en ciencia sin importar dónde estés.",
     icon: Video,
@@ -19,7 +19,7 @@ const SERVICES = [
     features: ["Análisis metabólico", "Guía de suplementación", "Recetario exclusivo"]
   },
   {
-    title: "Presencial",
+    title: "Presencial (1 mes)",
     price: "Elite",
     desc: "La experiencia completa en Caracas. Evaluación antropométrica in-situ.",
     icon: Users,
