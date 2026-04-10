@@ -10,7 +10,7 @@ const PLANS = {
   presencial: [
     {
       id: "p-primera",
-      title: "Primera Asesoría",
+      title: "Primera Asesoría (1 mes)",
       price: "100",
       features: ["Consulta inicial completa", "Mediciones corporales", "Plan personalizado", "Apoyo por WhatsApp"],
       wa: "Presencial%20Primera%20Vez"
@@ -27,7 +27,7 @@ const PLANS = {
   online: [
     {
       id: "o-primera",
-      title: "Primera Online",
+      title: "Primera Online (1 mes)",
       price: "50",
       features: ["Videollamada 40 min", "Análisis clínico", "Plan personalizado", "Apoyo por WhatsApp"],
       wa: "Online%20Primera%20Vez"
